@@ -86,6 +86,8 @@ public class MovementScript : MonoBehaviour
     {
         if(collision.tag == "wall")
         {
+            speed = 0;
+            myAnim.SetBool("Schmovin", false);
             won = true;
         }
     }
