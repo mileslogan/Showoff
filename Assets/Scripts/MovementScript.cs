@@ -23,11 +23,14 @@ public class MovementScript : MonoBehaviour
 
     Rigidbody2D rb;
 
+    Animator myAnim;
+
     // Start is called before the first frame update
     void Start()
     {
         endWall = GameObject.Find("EndWall");
         rb = this.GetComponent<Rigidbody2D>();
+        myAnim = this.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -64,6 +67,17 @@ public class MovementScript : MonoBehaviour
         else
         {
             rb.velocity = new Vector2(0, 0);
+            speed = 0;
+        }
+
+        if(speed > 0.5)
+        {
+            myAnim.SetBool("Schmovin", true);
+            myAnim.speed = speed * 0.1f;
+        }
+        else
+        {
+            myAnim.SetBool("Schmovin", false);
         }
         
     }
