@@ -121,6 +121,84 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &16740243
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 16740245}
+  - component: {fileID: 16740244}
+  m_Layer: 0
+  m_Name: TextManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &16740244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16740243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b196c0540e2549149d08a7e7f4c23fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textBox: {fileID: 1859157434}
+  topText: {fileID: 381560025}
+  middleText: {fileID: 2050968042}
+  timeText: {fileID: 31200682}
+  waitObject: {fileID: 1077590028}
+  waitText: {fileID: 1077590030}
+  pressObject: {fileID: 33409991}
+  pressText: {fileID: 33409993}
+  iconTransform: {fileID: 475771307}
+  Top11: Welcome to Showoff
+  Top12: Nice Job!
+  Top21: Level 2
+  Top22: Great Job!
+  Top31: Level 3
+  Top32: Amazing Job!
+  Top41: Level 4
+  Top42: Fantastic Job!
+  Top51: Level 5
+  Top52: You failed.
+  Middle11: Show Your Skills! Get to the end as fast as you can and amass an audience!
+    Spam Space to Move!
+  Middle21: Ok, now that you've got the hang of it, let's see how you do with the
+    goal farther out.
+  Middle31: Looks like you're gaining a little bit of traction! The goal is farther
+    but I know you can do it!
+  Middle41: You know the drill by now. Longer level, more eyes. Go get 'em.
+  Middle51: You've got a packed house! All eyes are on you! Just relax and you got
+    this.
+  Middle52: I'm disapointed. I had faith that you could handle this, but you messed
+    it up when it mattered the most.
+  Middle53: No. You don't get a second chance. That was it. You failed. Goodbye.
+  Middle02: 'Your Time Was:'
+  Press1: Press               To Start!
+  Press2: Press               To Continue!
+  Press3: Press               To Continue...?
+--- !u!4 &16740245
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16740243}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 162.07973, y: 159.33528, z: -5237.8003}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &27821096
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,6 +241,84 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &31200679
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 31200680}
+  - component: {fileID: 31200681}
+  - component: {fileID: 31200682}
+  m_Layer: 5
+  m_Name: TimeText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &31200680
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31200679}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1859157435}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 208.1, y: -13.5}
+  m_SizeDelta: {x: 602.66, y: 248.8}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &31200681
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31200679}
+  m_CullTransparentMesh: 0
+--- !u!114 &31200682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31200679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.62352943, g: 0.3372549, b: 0.9176471, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 4b2935b54007a494e99413a8e5933440, type: 3}
+    m_FontSize: 77
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 119
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 0.64
+  m_Text: XX.X Sec
 --- !u!1 &33409991
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,8 +354,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -146.8}
-  m_SizeDelta: {x: 666.767, y: 175.3}
+  m_AnchoredPosition: {x: 0, y: -105.3}
+  m_SizeDelta: {x: 666.767, y: 99.13971}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &33409993
 MonoBehaviour:
@@ -227,7 +383,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 119
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -975,7 +1131,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -45.6, y: 72.7}
+  m_AnchoredPosition: {x: -46.5, y: 8}
   m_SizeDelta: {x: 139.06331, y: 139.06331}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &475771308
@@ -1454,7 +1610,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1077590029
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2169,6 +2325,7 @@ RectTransform:
   - {fileID: 2050968041}
   - {fileID: 33409992}
   - {fileID: 1077590029}
+  - {fileID: 31200680}
   m_Father: {fileID: 273085817}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2223,6 +2380,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1891534014}
+  - component: {fileID: 1891534015}
   m_Layer: 0
   m_Name: ManagerHolder
   m_TagString: Untagged
@@ -2238,12 +2396,29 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1891534013}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 217.50092, y: 108.18209, z: -4649.342}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1891534015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891534013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c401c37225aa64a02a12ccc2d3278d95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuTimer: 0
+  levelTimer: 0
+  levelStarted: 0
+  levelWon: 0
+  currentLevel: 0
 --- !u!1 &1929246549
 GameObject:
   m_ObjectHideFlags: 0
@@ -2441,7 +2616,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -13.5}
-  m_SizeDelta: {x: 666.767, y: 248.8}
+  m_SizeDelta: {x: 713.2, y: 248.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2050968042
 MonoBehaviour:
@@ -2475,8 +2650,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.64
-  m_Text: Show Your Skills! Get to the end as fast as you can and amass an audience!
-    Spam Space to Move!
+  m_Text: 'Your Time Was:'
 --- !u!222 &2050968043
 CanvasRenderer:
   m_ObjectHideFlags: 0

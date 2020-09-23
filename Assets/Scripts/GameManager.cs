@@ -1,13 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    float menuTimer;
+    public float menuTimer;
+    public float levelTimer;
 
     public bool levelStarted;
     public bool levelWon;
+
+    public int currentLevel;
 
     private void Awake()
     {
@@ -18,6 +22,12 @@ public class GameManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(this.gameObject);
+
+        levelStarted = false;
+        levelWon = false;
+        menuTimer = 3;
+        levelTimer = 0;
+        currentLevel = 1;
     }
     // Start is called before the first frame update
     void Start()
@@ -44,6 +54,10 @@ public class GameManager : MonoBehaviour
                 StartLevel();
             }
         }
+        else if(levelStarted && !levelWon)
+        {
+            levelTimer += Time.deltaTime;
+        }
 
         if (levelWon)
         {
@@ -58,7 +72,15 @@ public class GameManager : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space) && menuTimer <= 0)
             {
-                SwitchLevel();
+                if(currentLevel <= 5)
+                {
+                    SwitchLevel();
+                }
+                else if(currentLevel == 6)
+                {
+                    Application.Quit();
+                }
+
             }
         }
     }
@@ -67,13 +89,21 @@ public class GameManager : MonoBehaviour
     {
         levelStarted = true;
         menuTimer = 3;
+        levelTimer = 0;
     }
 
     void SwitchLevel()
     {
         menuTimer = 3;
-        levelStarted = false;
-        levelWon = false;
-        //increase index by 1
+        if (currentLevel < 5)
+        {
+            levelStarted = false;
+            levelWon = false;
+        }
+        currentLevel++;
+        if(SceneManager.GetActiveScene().buildIndex <= 3)
+        {
+            SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex + 1));
+        }
     }
 }

@@ -8,11 +8,13 @@ public class MovementScript : MonoBehaviour
     public float spd1;
     public float spd2;
     public float spd3;
+    public float spd4;
 
     public float decelspd;
 
     public float time1;
     public float time2;
+    public float time3;
 
     public float timeBetweenPress;
 
@@ -25,9 +27,15 @@ public class MovementScript : MonoBehaviour
 
     Animator myAnim;
 
+    GameObject managerObject;
+    GameManager managerScript;
+
     // Start is called before the first frame update
     void Start()
     {
+        managerObject = GameObject.Find("ManagerHolder");
+        managerScript = managerObject.GetComponent<GameManager>();
+
         endWall = GameObject.Find("EndWall");
         rb = this.GetComponent<Rigidbody2D>();
         myAnim = this.GetComponent<Animator>();
@@ -36,7 +44,7 @@ public class MovementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!won)
+        if (managerScript.levelStarted && !managerScript.levelWon)
         {
             distanceToFinish = endWall.transform.position.x - transform.position.x;
 
@@ -44,7 +52,11 @@ public class MovementScript : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                if(timeBetweenPress < time2)
+                if(timeBetweenPress < time3)
+                {
+                    speed = spd4;
+                }
+                else if(timeBetweenPress < time2 && timeBetweenPress > time3)
                 {
                     speed = spd3;
                 }
@@ -70,7 +82,7 @@ public class MovementScript : MonoBehaviour
             speed = 0;
         }
 
-        if(speed > 0.5)
+        if(speed > 0.1)
         {
             myAnim.SetBool("Schmovin", true);
             myAnim.speed = speed * 0.1f;
@@ -88,7 +100,21 @@ public class MovementScript : MonoBehaviour
         {
             speed = 0;
             myAnim.SetBool("Schmovin", false);
-            won = true;
+            managerScript.levelWon = true;
+        }
+        else if (collision.tag == "breakOne")
+        {
+            spd1 *= 0.5f;
+            spd2 *= 0.5f;
+            spd3 *= 0.5f;
+            spd4 *= 0.5f;
+        }
+        else if (collision.tag == "breakTwo")
+        {
+            spd1 *= 0.3f;
+            spd2 *= 0.3f;
+            spd3 *= 0.3f;
+            spd4 *= 0.3f;
         }
     }
 }
